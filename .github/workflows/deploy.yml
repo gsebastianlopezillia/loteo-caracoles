@@ -22,10 +22,10 @@ jobs:
         run: npm install
 
       - name: Build Angular app
-        run: ng build --configuration production --output-path docs --base-href "https://gsebastianlopezillia.github.io/loteo-caracoles/"
+        run: ng build --configuration production --output-path dist --base-href "/loteo-caracoles/"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main
-          folder: docs
+          branch: gh-pages
+          folder: dist
