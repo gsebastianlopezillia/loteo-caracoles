@@ -11,9 +11,6 @@
 npm-debug.log
 yarn-error.log
 
-# GH site
-/docs
-
 # IDEs and editors
 .idea/
 .project
