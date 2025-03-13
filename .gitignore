@@ -5,7 +5,6 @@ yarn.lock
 
 # ⚡️ Angular builds temporales (las genera Actions)
 dist/
-docs/
 
 # ⚡️ Archivos de configuración locales
 /.angular/
