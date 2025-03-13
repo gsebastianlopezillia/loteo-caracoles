@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'https://gsebastianlopezillia.github.io/loteo-caracoles',
+  basePath: '/loteo-caracoles',
   supportedLocales: {
   "en-US": ""
 },
