@@ -27,31 +27,34 @@
         </button>
       </mat-card-content>
     </mat-card>
-
-    <mat-card class="picture-card">
-      <mat-card-content class="picture-card-content">
+  </section>
+  <section id="sub-home" class="block sub-home">
+    <mat-grid-list
+      [cols]="isMobile() ? 1 : 2"
+      rowHeight="450px"
+      gutterSize="20px"
+    >
+      <mat-grid-tile>
+        <mat-list>
+          <mat-list-item
+            >- Todos con salida a ruta 4 y a calle interna de
+            tierra</mat-list-item
+          >
+          <mat-list-item>- Terrenos desde 745 m² hasta 1.905 m²</mat-list-item>
+          <mat-list-item>- Todos los servicios</mat-list-item>
+          <mat-list-item>- Frente a ruta de asfalto</mat-list-item>
+          <mat-list-item>- Conexión de agua</mat-list-item>
+          <mat-list-item>- Línea eléctrica</mat-list-item>
+        </mat-list>
+      </mat-grid-tile>
+      <mat-grid-tile>
         <img
           src="assets/images/loteo-plano.png"
           alt="Plano del loteo en Almafuerte"
           class="loteo-plano"
         />
-        <div class="picture-text">
-          <mat-list>
-            <mat-list-item
-              >- Todos con salida a ruta 4 y a calle interna de
-              tierra</mat-list-item
-            >
-            <mat-list-item
-              >- Terrenos desde 745 m² hasta 1.905 m²</mat-list-item
-            >
-            <mat-list-item>- Todos los servicios</mat-list-item>
-            <mat-list-item>- Frente a ruta de asfalto</mat-list-item>
-            <mat-list-item>- Conexión de agua</mat-list-item>
-            <mat-list-item>- Línea eléctrica</mat-list-item>
-          </mat-list>
-        </div>
-      </mat-card-content>
-    </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
   </section>
 
   <!-- Bloque Mapa -->
@@ -108,55 +111,6 @@
     </mat-card>
   </section>
 
-  <!-- Bloque Lotes -->
-  <section id="lotes" class="block lotes">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title class="lotes-header"
-          >Lotes disponibles para tu casa de fin de semana</mat-card-title
-        >
-      </mat-card-header>
-      <mat-card-content>
-        <mat-grid-list
-          [cols]="isMobile() ? 1 : 3"
-          rowHeight="400px"
-          gutterSize="16px"
-        >
-          <mat-grid-tile
-            *ngFor="let lote of lotesFiltrados()"
-            [ngClass]="{ ocupado: !lote.disponible }"
-          >
-            <mat-card
-              class="lote-card"
-              (click)="lote.disponible ? abrirModal(lote.id, $event) : null"
-            >
-              <img
-                mat-card-image
-                [src]="getSafePhotoUrl(lote.fotos[0])"
-                alt="{{ lote.id }}"
-                class="responsive-img"
-              />
-              <mat-card-content>
-                <h3 mat-line>{{ lote.id }} (Manzana {{ lote.manzana }})</h3>
-                <p mat-line>{{ lote.superficie }} m² - U$S{{ lote.precio }}</p>
-                <p mat-line>{{ lote.calle }} - {{ lote.estado }}</p>
-                <button
-                  *ngIf="lote.disponible"
-                  mat-raised-button
-                  color="primary"
-                  (click)="abrirWhatsApp(lote.id, $event)"
-                >
-                  Consultar por WhatsApp
-                </button>
-                <p *ngIf="!lote.disponible" class="ocupado-text">Ocupado</p>
-              </mat-card-content>
-            </mat-card>
-          </mat-grid-tile>
-        </mat-grid-list>
-      </mat-card-content>
-    </mat-card>
-  </section>
-
   <!-- Bloque Video -->
   <section id="video" class="block video">
     <mat-card>
@@ -170,6 +124,48 @@
         ></iframe>
       </mat-card-content>
     </mat-card>
+  </section>
+
+  <!-- Bloque Lotes -->
+  <section id="lotes" class="block lotes">
+    <h2>Lotes disponibles para tu casa de fin de semana</h2>
+
+    <mat-grid-list
+      [cols]="isMobile() ? 1 : 3"
+      rowHeight="400px"
+      gutterSize="16px"
+    >
+      <mat-grid-tile
+        *ngFor="let lote of lotesFiltrados()"
+        [ngClass]="{ ocupado: !lote.disponible }"
+      >
+        <mat-card
+          class="lote-card">
+          <!-- (click)="lote.disponible ? abrirModal(lote.id, $event) : null" -->
+        
+          <img
+            mat-card-image
+            [src]="getSafePhotoUrl(lote.fotos[0])"
+            alt="{{ lote.id }}"
+            class="responsive-img"
+          />
+          <mat-card-content>
+            <h3 mat-line>{{ lote.id }} (Manzana {{ lote.manzana }})</h3>
+            <p mat-line>{{ lote.superficie }} m² - U$S{{ lote.precio }}</p>
+            <p mat-line>{{ lote.calle }} - {{ lote.estado }}</p>
+            <button
+              *ngIf="lote.disponible === 'Si'"
+              mat-raised-buttong
+              color="primary"
+              (click)="abrirWhatsApp(lote.id, $event)"
+            >
+              Consultar por WhatsApp
+            </button>
+            <p *ngIf="lote.disponible === 'No'" class="ocupado-text">No disponible</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
   </section>
 
   <!-- Bloque FAQ -->

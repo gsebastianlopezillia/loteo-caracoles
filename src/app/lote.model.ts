@@ -14,7 +14,7 @@ export class Lote {
   estadoEdificio!: string;
   notasLegales!: string;
   fotos!: string[];
-  disponible!: boolean; // Booleano para disponibilidad
+  disponible!: string; // Booleano para disponibilidad
   precio!: number;
   constructor(lote?:Partial<Lote>) {
     Object.assign(this, {}, lote)

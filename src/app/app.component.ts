@@ -85,7 +85,7 @@ export class AppComponent implements OnInit {
     private breakpointObserver: BreakpointObserver,
     public sanitizer: DomSanitizer
   ) {
-    const youtubeId = 'ISU97qNFwq0'; // Reemplaza con el ID real del video
+    const youtubeId = 'Gpv1sWGmM-E'; // Reemplaza con el ID real del video
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
       `https://www.youtube.com/embed/${youtubeId}`
     );

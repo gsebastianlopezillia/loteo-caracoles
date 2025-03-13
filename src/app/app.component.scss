@@ -1,5 +1,5 @@
 /* Paleta de colores alegre */
-$primary-color: #2c3e50; // Azul oscuro profundo (sutilmente alegre, profesional)
+$primary-color: #386088; // Azul oscuro profundo (sutilmente alegre, profesional)
 $secondary-color: #e74c3c; // Coral rojizo (vibrante y cálido, para acentos secundarios)
 $accent-color: #f1c40f; // Amarillo dorado (alegre, energizante, ideal para botones y highlights)
 $background-color: #ecf0f1; // Gris-azulado claro (suave, luminoso, acogedor)
@@ -201,6 +201,14 @@ $transition-duration: 0.3s;
   max-height: 60vh;
 }
 
+
+
+/* Bloque sub-home */
+
+#sub-home {
+  background-color: $primary-color;
+}
+
 /* Bloque Mapa */
 .mapa {
   padding: $spacing-unit * 2;
@@ -238,15 +246,21 @@ $transition-duration: 0.3s;
   }
   mat-grid-list {
     mat-grid-tile {
+      .mat-mdc-card {
+        background-color: $primary-color !important;
+      }
       .lote-card {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
         width: -webkit-fill-available;
+        color: $light-text-color;
+        
         img {
           max-height: 200px;
           object-fit: cover;
+          padding: 1rem 1rem 0px 1rem ;
         }
         border-radius: none;
         mat-card-content {
@@ -416,12 +430,14 @@ $transition-duration: 0.3s;
   }
 }
 
-.mat-mdc-card {
-  background-color: transparent !important;
-}
-
 .video {
   text-align: center;
+}
+
+#video {
+  .mat-mdc-card {
+    background-color: transparent;
+  }
 }
 
 .responsive-img {
