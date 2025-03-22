@@ -1,15 +1,10 @@
 <!-- Banner permanente con número de teléfono -->
 <div class="phone-banner">
-  <p>
-    Llámanos ahora:
-    <a href="tel:3764165357" mat-button color="primary">376 416 5357</a>
-  </p>
+  <a href="tel:3764165357">Llamar 376 416 5357</a>
 </div>
-
-<!-- Contenido de la landing page en bloques -->
 <div class="landing-container mat-elevation-z2">
-  <!-- Bloque Home -->
-  <section id="home" class="block home">
+  <section id="header" class="header">
+    <!-- Bloque Home -->
     <mat-card class="hero-card">
       <div class="hero-background">
         <img
@@ -20,181 +15,124 @@
         <div class="overlay"></div>
       </div>
       <mat-card-content class="hero-text">
-        <h1 mat-line>Lotes sobre la ruta 4</h1>
-        <p mat-line>Oportunidad de inversión desde USD 8.000.</p>
-        <button mat-button color="primary" (click)="abrirWhatsApp()">
-          Consultar por WhatsApp
-        </button>
+        <h1 mat-line>Tu próximo terreno te espera en Ruta 4</h1>
       </mat-card-content>
     </mat-card>
   </section>
-  <section id="sub-home" class="block sub-home">
-    <mat-grid-list
-      [cols]="isMobile() ? 1 : 2"
-      rowHeight="450px"
-      gutterSize="20px"
-    >
-      <mat-grid-tile>
-        <mat-list>
-          <mat-list-item
-            >- Todos con salida a ruta 4 y a calle interna de
-            tierra</mat-list-item
+
+  <section id="features" class="features">
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-icon fontIcon="open_in_full"></mat-icon>
+        <div>
+          <mat-card-title>1000 mts</mat-card-title>
+          <mat-card-subtitle>Todo el espacio que necesitás.</mat-card-subtitle>
+        </div>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-icon fontIcon="route"></mat-icon>
+        <div>
+          <mat-card-title>Sobre ruta de asfalto</mat-card-title>
+          <mat-card-subtitle
+            >Todos los lotes tienen doble salida.</mat-card-subtitle
           >
-          <mat-list-item>- Terrenos desde 745 m² hasta 1.905 m²</mat-list-item>
-          <mat-list-item>- Todos los servicios</mat-list-item>
-          <mat-list-item>- Frente a ruta de asfalto</mat-list-item>
-          <mat-list-item>- Conexión de agua</mat-list-item>
-          <mat-list-item>- Línea eléctrica</mat-list-item>
-        </mat-list>
-      </mat-grid-tile>
-      <mat-grid-tile>
+        </div>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-icon fontIcon="power"></mat-icon>
+        <div>
+          <mat-card-title>Luz</mat-card-title>
+          <mat-card-subtitle>Conexión de luz en puerta.</mat-card-subtitle>
+        </div>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-icon fontIcon="water"></mat-icon>
+        <div>
+          <mat-card-title>Agua</mat-card-title>
+          <mat-card-subtitle>Agua para todos.</mat-card-subtitle>
+        </div>
+      </mat-card-header>
+    </mat-card>
+  </section>
+  <section id="picture2" class="info">
+    <mat-card class="hero-card">
+      <div class="hero-background">
         <img
-          src="assets/images/loteo-plano.png"
-          alt="Plano del loteo en Almafuerte"
-          class="loteo-plano"
+          src="assets\images\loteo-paneo.gif"
+          alt="Plano loteo"
+          class="hero-gif"
         />
-      </mat-grid-tile>
-    </mat-grid-list>
-  </section>
+        <div class="overlay">
+          <mat-grid-list cols="3" rowHeight="9rem">
+            <mat-grid-tile colspan="3">
+              <mat-card-content class="hero-text">
+                <h1 mat-line>Listo para escriturar</h1>
+              </mat-card-content>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="ghost-card">
+                ✅ Título de propiedad listo para transferir.
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div class="ghost-card">✅ Planos catastrales registrados.</div>
+            </mat-grid-tile>
 
-  <!-- Bloque Mapa -->
-  <section id="mapa" class="block mapa">
-    <mat-card>
+            <mat-grid-tile>
+              <div class="ghost-card">✅ Impuestos pagos.</div>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="3">
+              <button
+                mat-fab
+                extended
+                (click)="abrirWhatsApp()"
+              >
+                <img
+                  src="assets/images/whatsapp-icon.png"
+                  alt="WhatsApp"
+                  class="whatsapp-icon"
+                />
+                Pedir información
+              </button>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card appearance="outlined">
       <mat-card-header>
-        <mat-card-title
-          >Ubicación del loteo en Almafuerte, Misiones</mat-card-title
-        >
+        <mat-icon fontIcon="faucet"></mat-icon>
+        <div>
+          <mat-card-title>Agua</mat-card-title>
+          <mat-card-subtitle>Agua para todos.</mat-card-subtitle>
+        </div>
       </mat-card-header>
-      <mat-card-content class="mapa-grid">
-        <mat-grid-list
-          [cols]="isMobile() ? 1 : 2"
-          rowHeight="450px"
-          gutterSize="20px"
-        >
-          <mat-grid-tile>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2454.5256193189257!2d-55.449655137825445!3d-27.522757268928576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDAyJzA2LjAiUyA1NMKwMzQnNDEuNCJX!5e1!3m2!1sen!2sar!4v1740618262405!5m2!1sen!2sar"
-              width="100%"
-              height="100%"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <mat-list>
-              <mat-list-item
-                >- Ubicación estratégica sobre Ruta 4
-                (asfaltada).</mat-list-item
-              >
-              <mat-list-item
-                >- A 4 km de Bonpland y 15 km de Alem.</mat-list-item
-              >
-              <mat-list-item
-                >- A 200 mts del arroyo Isabel, ideal para un entorno
-                natural.</mat-list-item
-              >
-              <mat-list-item
-                >- Acceso inmediato a servicios: escuela, parada de colectivo,
-                agua y electricidad.</mat-list-item
-              >
-              <mat-list-item><h2>Ideal para:</h2></mat-list-item>
-              <mat-list-item>- Vivienda de fin de semana</mat-list-item>
-              <mat-list-item>- Emprendimiento turístico</mat-list-item>
-              <mat-list-item>- Hogar permanente</mat-list-item>
-              <mat-list-item>- Inversión proyectada</mat-list-item>
-            </mat-list>
-          </mat-grid-tile>
-        </mat-grid-list>
-      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="abrirWhatsApp()">
+          Pedir Información
+        </button>
+      </mat-card-actions>
     </mat-card>
   </section>
-
-  <!-- Bloque Video -->
-  <section id="video" class="block video">
-    <mat-card>
-      <mat-card-content>
-        <iframe
-          [src]="videoUrl"
-          width="560"
-          height="315"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </mat-card-content>
-    </mat-card>
-  </section>
-
-  <!-- Bloque Lotes -->
-  <section id="lotes" class="block lotes">
-    <h2>Lotes disponibles para tu casa de fin de semana</h2>
-
-    <mat-grid-list
-      [cols]="isMobile() ? 1 : 3"
-      rowHeight="400px"
-      gutterSize="16px"
-    >
-      <mat-grid-tile
-        *ngFor="let lote of lotesFiltrados()"
-        [ngClass]="{ ocupado: !lote.disponible }"
-      >
-        <mat-card
-          class="lote-card">
-          <!-- (click)="lote.disponible ? abrirModal(lote.id, $event) : null" -->
-        
-          <img
-            mat-card-image
-            [src]="getSafePhotoUrl(lote.fotos[0])"
-            alt="{{ lote.id }}"
-            class="responsive-img"
-          />
-          <mat-card-content>
-            <h3 mat-line>{{ lote.id }} (Manzana {{ lote.manzana }})</h3>
-            <p mat-line>{{ lote.superficie }} m² - U$S{{ lote.precio }}</p>
-            <p mat-line>{{ lote.calle }} - {{ lote.estado }}</p>
-            <button
-              *ngIf="lote.disponible === 'Si'"
-              mat-raised-buttong
-              color="primary"
-              (click)="abrirWhatsApp(lote.id, $event)"
-            >
-              Consultar por WhatsApp
-            </button>
-            <p *ngIf="lote.disponible === 'No'" class="ocupado-text">No disponible</p>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </section>
-
-  <!-- Bloque FAQ -->
-  <section id="faq" class="block faq">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Preguntas frecuentes</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-list>
-          <mat-list-item *ngFor="let faq of faqs">
-            <h3 mat-line>{{ faq.pregunta }}</h3>
-            <p mat-line>{{ faq.respuesta }}</p>
-          </mat-list-item>
-        </mat-list>
-      </mat-card-content>
-    </mat-card>
-  </section>
-
-  <!-- Botón flotante de WhatsApp -->
-  <a
-    href="javascript:void(0)"
-    (click)="abrirWhatsApp()"
-    class="whatsapp-button"
-  >
-    <img
-      src="assets/images/whatsapp-icon.png"
-      alt="WhatsApp"
-      class="whatsapp-icon"
-    />
-  </a>
 </div>
+
+<footer
+  style="text-align: center; padding: 1rem; font-size: 0.875rem; color: #666"
+>
+  © 2025 | Desarrollado por
+  <a
+    href="mailto:gsebastianlopezillia@gmail.com"
+    style="color: #007bff; text-decoration: none"
+    >gsebastianlopezillia&#64;gmail.com</a
+  >
+</footer>

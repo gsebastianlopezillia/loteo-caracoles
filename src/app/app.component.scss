@@ -2,7 +2,7 @@
 $primary-color: #386088; // Azul oscuro profundo (sutilmente alegre, profesional)
 $secondary-color: #e74c3c; // Coral rojizo (vibrante y cálido, para acentos secundarios)
 $accent-color: #f1c40f; // Amarillo dorado (alegre, energizante, ideal para botones y highlights)
-$background-color: #ecf0f1; // Gris-azulado claro (suave, luminoso, acogedor)
+$background-color: #2f3437; // Gris-azulado claro (suave, luminoso, acogedor)
 $text-color: #2c3e50; // Texto principal (coherente con el azul oscuro)
 $light-text-color: #fff; // Texto sobre fondos oscuros (blanco, para contraste)
 
@@ -10,9 +10,9 @@ $success-color: #27ae60; // Verde esmeralda (para confirmaciones o checks, alegr
 $error-color: #e74c3c; // Coral rojizo (también para errores, consistente con $secondary-color)
 $warning-color: #f39c12; // Naranja cálido (para advertencias, vibrante y amigable)
 /* Tipografía */
-$font-family: 'Roboto', sans-serif;
+$font-family: "Roboto", sans-serif;
 $font-size-base: 16px;
-$font-size-heading: 24px;
+$font-size-heading: 36px;
 $font-size-subheading: 18px;
 
 /* Espaciado */
@@ -21,37 +21,45 @@ $spacing-unit: 16px;
 /* Animaciones */
 $transition-duration: 0.3s;
 /* Banner permanente */
+
+#header {
+  max-height: 20rem;
+  overflow: hidden;
+}
+
+.title {
+  font-family: "Plus Jakarta Sans" !important;
+  font-weight: 700;
+}
+
+.content {
+  font-family: "Public Sans" !important;
+  font-weight: 400 !important;
+}
+
+.content-bold {
+  font-family: "Public Sans" !important;
+  font-weight: 700 !important;
+}
+
 .phone-banner {
-  background-color: #333; // Gris oscuro
-  color: #fff; // Texto blanco
-  padding: 24px; // Más espacio (antes 16px)
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  font-size: 16px; // Tamaño de fuente base
-  p {
-    margin: 0; // Elimina márgenes innecesarios
-    font-size: 16px;
-  }
+  background-color: #1b2128;
   a {
-    color: #007bff; // Azul vibrante
+    color: #ebebeb;
+    font-feature-settings: "dlig" on;
+    font-family: "Plus Jakarta Sans";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.25rem; /* 125% */
     text-decoration: none;
-    font-weight: bold;
-    padding: 8px 16px; // Padding para que parezca botón
-    border-radius: 4px; // Bordes redondeados
-    transition: background-color 0.3s; // Transición suave
-    &:hover {
-      background-color: rgba(0, 123, 255, 0.1); // Efecto hover sutil
-    }
   }
+  padding: 0.625rem 0px;
+  text-align: center;
 }
 
 /* Contenedor principal */
 .landing-container {
-  padding-top: 60px; // Espacio para el banner fijo
   background-color: $background-color;
 }
 
@@ -80,6 +88,23 @@ $transition-duration: 0.3s;
       right: 0;
       bottom: 0;
       background-color: rgba(0, 0, 0, 0.5); // Overlay semi-transparente
+      .ghost-card {
+        display: flex;
+        padding: 1rem 0.5rem;
+        align-items: center;
+        gap: 0.5rem;
+        flex: 1 0 0;
+        align-self: stretch;
+        color: white;
+        background: linear-gradient(
+          0deg,
+          rgba(47, 52, 55, 0.75) 0%,
+          rgba(47, 52, 55, 0.75) 100%
+        );
+        border-radius: 8px;
+        margin: 0.5rem;
+        
+      }
     }
   }
 
@@ -87,18 +112,19 @@ $transition-duration: 0.3s;
     position: relative;
     z-index: 1; // Sobre el overlay
     color: #fff; // Texto blanco para contraste
-    text-align: center;
-    padding: 40px; // Más padding para destacar
+    padding: 0.9375rem;
     flex-direction: column;
-    justify-content: center;
     min-height: 100%; // Ocupa todo el contenedor
 
     h1 {
-      font-size: 36px; // Título más grande
-      font-weight: 700; // Negrita
-      margin-bottom: 20px; // Más espacio después del título
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); // Sombra para mayor legibilidad
-      line-height: 1.2; // Mejor legibilidad
+      color: #fff;
+      font-feature-settings: "dlig" on;
+      font-family: "Plus Jakarta Sans";
+      font-size: 3rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 2.8125rem; /* 93.75% */
+      letter-spacing: -0.0625rem;
     }
 
     p {
@@ -151,317 +177,55 @@ $transition-duration: 0.3s;
   }
 }
 
-
-.picture-card {
-  position: relative;
-  border-radius: 0px !important;
-  background-color: transparent;
-  mat-card-content {
-    text-align: center;
-  }
-  .picture-text {
-    font-family: 'Roboto', sans-serif; // Consistente con Angular Material
-    line-height: 1.6; // Mejor legibilidad
-
-    p {
-      font-size: 16px; // Tamaño legible
-      font-weight: 500; // Semi-negrita para destacar
-      margin-bottom: 16px; // Espacio entre párrafos
-      text-align: center; // Centrado para consistencia con el diseño
-    }
-    text-align: center;
-    mat-list {
-      margin-top: 16px; // Espacio antes de la lista
-      background-color: #333;
-      max-width: fit-content;
-      display: inline-block;
-      padding: 1rem;
-      mat-list-item {
-        font-size: 16px; // Tamaño consistente
-        color: #666 !important; // Texto gris medio
-        padding: 8px 0; // Padding interno para cada ítem
-        text-align: center;
-        max-width: fit-content;
-        &:before {
-          content: '✓'; // Símbolo de verificación como viñeta
-          color: #007bff; // Azul vibrante para destacar
-          margin-right: 8px; // Espacio después del símbolo
-        }
-      }
-    }
-  }
-}
-
-.picture-card-content {
-  border-radius: 0px !important;
-  text-align: center !important;
-}
-
-.loteo-plano {
-  max-height: 60vh;
-}
-
-
-
-/* Bloque sub-home */
-
-#sub-home {
-  background-color: $primary-color;
-}
-
-/* Bloque Mapa */
-.mapa {
-  padding: $spacing-unit * 2;
-  background-color: #2c3e50;
-  color: #f5f5f5;
+#features {
+  color: #ebebeb;
+  background-color: #2f3437;
+  font-feature-settings: "dlig" on;
+  font-family: "Plus Jakarta Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25rem; /* 125% */
   mat-card {
-    padding: 0;
-    border-radius: none;
-  }
-  .mapa-grid {
-    mat-grid-list {
-      mat-grid-tile {
-        &:first-child {
-          padding: 0;
-        }
-      }
+    display: flex;
+    padding: 1rem;
+    align-items: flex-start;
+    gap: 0.75rem;
+    align-self: stretch;
+    border: 1px solid #d1e5d9;
+    margin: 1rem;
+    background: #2f3437;
+    mat-icon {
+      height: 2.5rem;
+      width: 2.5rem;
     }
-  }
-  .picture-text {
-    h2 {
-      font-size: $font-size-subheading;
-      margin-bottom: $spacing-unit;
+    mat-card-title {
+      color: #ebebeb;
+      font-feature-settings: "dlig" on;
+      font-family: "Plus Jakarta Sans";
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.25rem; /* 125% */
     }
-    mat-list {
-      margin-top: $spacing-unit;
-    }
-  }
-}
-
-/* Bloque Lotes */
-.lotes {
-  padding: $spacing-unit * 2;
-  .filtro {
-    margin-bottom: $spacing-unit * 2;
-  }
-  mat-grid-list {
-    mat-grid-tile {
-      .mat-mdc-card {
-        background-color: $primary-color !important;
-      }
-      .lote-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        width: -webkit-fill-available;
-        color: $light-text-color;
-        
-        img {
-          max-height: 200px;
-          object-fit: cover;
-          padding: 1rem 1rem 0px 1rem ;
-        }
-        border-radius: none;
-        mat-card-content {
-          padding: $spacing-unit;
-          h3 {
-            font-size: $font-size-subheading;
-            margin-bottom: $spacing-unit / 2;
-          }
-          p {
-            font-size: $font-size-base;
-            margin-bottom: $spacing-unit;
-          }
-          button {
-            background-color: $accent-color;
-            color: $light-text-color;
-            padding: $spacing-unit / 2 $spacing-unit;
-            border: none;
-            border-radius: 4px;
-            font-size: $font-size-base;
-            cursor: pointer;
-            transition: background-color $transition-duration;
-            &:hover {
-              background-color: darken($accent-color, 10%);
-            }
-          }
-          .ocupado-text {
-            color: $secondary-color;
-            font-style: italic;
-          }
-        }
-      }
+    mat-card-subtitle {
+      color: #fff;
+      font-feature-settings: "dlig" on;
+      font-family: "Public Sans";
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.3125rem;
     }
   }
 }
 
-/* Bloque FAQ */
-.faq {
-  padding: 32px; // Más espacio alrededor del bloque
-  background-color: #f5f5f5; // Fondo gris claro, consistente con el diseño global
-  .mdc-list-item.mdc-list-item--with-one-line {
-    height: auto;
+#picture1 {
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    background: #21534e;
   }
-  mat-card {
-    background-color: #fff; // Fondo blanco para el card
-    border-radius: 8px; // Bordes sutiles
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra ligera para profundidad
-    overflow: hidden; // Evita desbordamientos
-
-    mat-card-header {
-      background-color: #007bff; // Azul vibrante como acento
-      color: #fff; // Texto blanco para contraste
-      padding: 16px; // Padding interno
-      mat-card-title {
-        font-size: 24px; // Título más grande
-        font-weight: 600; // Semi-negrita
-      }
-    }
-
-    mat-card-content {
-      padding: 24px; // Más padding para el contenido
-      mat-list {
-        mat-list-item {
-          margin-bottom: 16px; // Espacio entre preguntas
-          padding: 16px; // Padding interno para cada item
-          background-color: #fafafa; // Fondo gris muy claro para cada item
-          border-radius: 4px; // Bordes sutiles
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Sombra leve
-          transition: transform 0.3s; // Efecto hover suave
-          &:hover {
-            transform: translateY(-2px); // Levanta el item al pasar el ratón
-          }
-
-          h3 {
-            font-size: 18px; // Preguntas más grandes
-            font-weight: 600; // Negrita
-            color: #333; // Texto gris oscuro
-            margin-bottom: 8px; // Espacio antes de la respuesta
-          }
-
-          p {
-            font-size: 16px; // Respuestas legibles
-            color: #666; // Texto gris medio
-            line-height: 1.5; // Mejor legibilidad
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .faq {
-    padding: 16px; // Menos padding en móviles
-    mat-card {
-      mat-card-header {
-        padding: 12px; // Padding reducido
-        mat-card-title {
-          font-size: 20px; // Título más pequeño
-        }
-      }
-      mat-card-content {
-        padding: 16px; // Padding reducido
-        mat-list {
-          mat-list-item {
-            padding: 12px; // Padding reducido
-            margin-bottom: 12px; // Espacio reducido
-            h3 {
-              font-size: 16px; // Preguntas más pequeñas
-            }
-            p {
-              font-size: 14px; // Respuestas más pequeñas
-            }
-          }
-        }
-      }
-    }
-  }
-}
-/* Botón flotante de WhatsApp */
-.whatsapp-button {
-  position: fixed;
-  bottom: $spacing-unit * 2;
-  right: $spacing-unit * 2;
-  z-index: 1000;
-  img {
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    transition: transform $transition-duration;
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-}
-
-/* Responsividad */
-@media (max-width: 768px) {
-  .phone-banner {
-    font-size: $font-size-base * 0.9;
-  }
-  .hero-text {
-    h1 {
-      font-size: $font-size-heading;
-    }
-    p {
-      font-size: $font-size-subheading * 0.9;
-    }
-  }
-  .lotes {
-    mat-grid-list {
-      mat-grid-tile {
-        .lote-card {
-          img {
-            max-height: 150px;
-          }
-        }
-      }
-    }
-  }
-  .whatsapp-button {
-    bottom: $spacing-unit;
-    right: $spacing-unit;
-    img {
-      width: 50px;
-      height: 50px;
-    }
-  }
-}
-
-.video {
-  text-align: center;
-}
-
-#video {
-  .mat-mdc-card {
-    background-color: transparent;
-  }
-}
-
-.responsive-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover; /* Opcional: ajusta cómo se recorta la imagen */
-}
-
-:host ::ng-deep .mat-mdc-dialog-panel {
-  max-width: 90vw !important;
-  max-height: 90vh !important;  
-}
-
-:host ::ng-deep .cdk-overlay-pane {
-  max-width: 90vw !important;
-  max-height: 90vh !important;  
-}
-
-.cdk-overlay-pane.mat-mdc-dialog-panel {
-  max-width: 90vw !important;
-  min-width: 90vh !important;  
-}
-
-:host ::ng-deep .cdk-overlay-pane.mat-mdc-dialog-panel {
-  max-width: 90vw !important;
-  min-width: 90vh !important;  
 }

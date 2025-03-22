@@ -13,6 +13,8 @@ import { DetailModalComponent } from './detail-modal/detail-modal.component';
 import { Lote } from './lote.model';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
+import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
@@ -27,6 +29,8 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
     FormsModule,
     MatDialogModule,
     CommonModule,
+    MatIconModule, 
+    MatButtonModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
