@@ -91,11 +91,7 @@
               <div class="ghost-card">✅ Impuestos pagos.</div>
             </mat-grid-tile>
             <mat-grid-tile colspan="3">
-              <button
-                mat-fab
-                extended
-                (click)="abrirWhatsApp()"
-              >
+              <button mat-fab extended (click)="abrirWhatsApp()">
                 <img
                   src="assets/images/whatsapp-icon.png"
                   alt="WhatsApp"
@@ -108,20 +104,122 @@
         </div>
       </div>
     </mat-card>
+  </section>
+  <section id="picture3" class="info">
+    <div class="property-details-container">
+      <!-- Título -->
+      <mat-card class="property-card">
+        <mat-card-header>
+          <mat-card-title>Ubicación privilegiada</mat-card-title>
+        </mat-card-header>
 
-    <mat-card appearance="outlined">
+        <!-- Lista de detalles de ubicación -->
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>location_on</mat-icon>
+              <span matLine>A solo 15 km de Alem y 5 km de Bonpland.</span>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>group</mat-icon>
+              <span matLine>Parada de colectivo en el loteo.</span>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>water</mat-icon>
+              <span matLine>Arroyo Isabel a solo 200 mts.</span>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>school</mat-icon>
+              <span matLine
+                >Escuela primaria a 100 mts y secundaria cercana.</span
+              >
+            </mat-list-item>
+          </mat-list>
+
+          <!-- Grid de características destacadas -->
+          <mat-grid-list
+            cols="2"
+            rowHeight="100px"
+            gutterSize="10px"
+            class="features-grid"
+          >
+            <mat-grid-tile>
+              <mat-card class="feature-card">
+                <mat-card-content>Vivienda de fin de semana</mat-card-content>
+              </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-card class="feature-card">
+                <mat-card-content>Hogar permanente</mat-card-content>
+              </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-card class="feature-card">
+                <mat-card-content>Emprendimiento turístico</mat-card-content>
+              </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-card class="feature-card">
+                <mat-card-content>Inversión proyectada</mat-card-content>
+              </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card-content>
+
+        <!-- Botón de WhatsApp -->
+        <mat-card-actions>
+          <button mat-raised-button color="primary" class="whatsapp-button">
+            <mat-icon>chat</mat-icon> Coordinar Visita
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </section>
+  <section id="map">
+    <div class="map-container">
+      <!-- Título -->
+      <mat-card class="map-card">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2454.5256193189257!2d-55.449655137825445!3d-27.522757268928576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDAyJzA2LjAiUyA1NMKwMzQnNDEuNCJX!5e1!3m2!1sen!2sar!4v1740618262405!5m2!1sen!2sar"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </mat-card>
+    </div>
+  </section>
+  <section id="image-cards">
+    <mat-card *ngFor="let imageCard of imageCards" class="image-card" appearance="outlined">
       <mat-card-header>
-        <mat-icon fontIcon="faucet"></mat-icon>
-        <div>
-          <mat-card-title>Agua</mat-card-title>
-          <mat-card-subtitle>Agua para todos.</mat-card-subtitle>
-        </div>
+        <mat-card-title>{{imageCard.title}}</mat-card-title>
       </mat-card-header>
-      <mat-card-actions>
-        <button mat-button (click)="abrirWhatsApp()">
-          Pedir Información
-        </button>
-      </mat-card-actions>
+      <img mat-card-image [src]="imageCard.url" [alt]="imageCard.title">
+    </mat-card>
+  </section>
+  <section id="faq" class="block faq">
+    <div class="faq-title"><h1>Preguntas frecuentes</h1></div> 
+    <mat-card class="faq-card" *ngFor="let faq of faqs">
+      <mat-card-header>
+        <mat-card-title>{{ faq.pregunta }}</mat-card-title>
+        <mat-card-subtitle>{{ faq.respuesta }}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+  </section>
+  <section id="video" class="block video">
+    <mat-card>
+      <mat-card-content>
+        <iframe
+          [src]="videoUrl"
+          width="560"
+          height="315"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </mat-card-content>
     </mat-card>
   </section>
 </div>

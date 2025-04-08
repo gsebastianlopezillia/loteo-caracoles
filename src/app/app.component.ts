@@ -40,7 +40,6 @@ import { MatButtonModule } from '@angular/material/button';
 export class AppComponent implements OnInit {
   title = 'loteo-caracoles';
   videoUrl: SafeResourceUrl;
-  photoUrl: SafeUrl;
   // Signals para estado reactivo
   lotes = signal<Lote[]>([]);
   filter = signal<string>('');
@@ -59,27 +58,55 @@ export class AppComponent implements OnInit {
     );
   });
 
+
+  public imageCards = [
+    {
+      title: "Conecta con la naturaleza",
+      url: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Sfd2NqT0EBVj0uQVUwSDnw.jpeg"
+    },
+    {
+      title: "Caminos mantenidos",
+      url: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Sfd2NqT0EBVj0uQVUwSDnw.jpeg"
+    },
+    {
+      title: "Límites claros",
+      url: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Sfd2NqT0EBVj0uQVUwSDnw.jpeg"
+    },
+    {
+      title: "Flora autóctona",
+      url: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Sfd2NqT0EBVj0uQVUwSDnw.jpeg"
+    },
+    {
+      title: "Fauna silvestre",
+      url: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Sfd2NqT0EBVj0uQVUwSDnw.jpeg"
+    },
+    {
+      title: "Noches soñadas",
+      url: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Sfd2NqT0EBVj0uQVUwSDnw.jpeg"
+    }
+  ]
+
   // Static FAQs
   public faqs = [
     {
-      pregunta: '¿Es un buen lugar para una casa de fin de semana?',
-      respuesta: 'Sí, con acceso a Ruta 4, entorno natural, y servicios cercanos, es perfecto para relajarte los fines de semana.',
+      pregunta: '¿Es apto crédito?',
+      respuesta: 'Sí s apto crédito hipotecario.',
     },
     {
-      pregunta: '¿Se financia?',
-      respuesta: 'No, pero aceptamos permuta por vehículos.',
+      pregunta: '¿Se puede financiar?',
+      respuesta: 'No financiamos, pero aceptamos permuta por vehículo.',
     },
     {
       pregunta: '¿Cuándo puedo empezar a construir?',
-      respuesta: 'Inmediatamente, toda la documentación en regla y servicios disponibles.',
+      respuesta: 'De inmediato, toda la documentación se encuentra en regla y los servicios están disponibles.',
     },
     {
-      pregunta: '¿Tiene bajada de luz?',
-      respuesta: 'Solo el lote con la casa tiene hecha la bajada, pero la línea pasa por todo el frente de la ruta, cada quién debe poner el pilar y pedir la bajada una vez adquirido el lote.',
+      pregunta: '¿Qué tipo de suelo es?',
+      respuesta: 'Es suelo 6a, elevado con pendiente suave.',
     },
     {
-      pregunta: '¿Tiene conexión de agua?',
-      respuesta: 'Todos los lotes tienen conexión de agua de red, cada quién deberá tramitar su titularidad una vez adquirido el lote.',
+      pregunta: '¿Es bañado?',
+      respuesta: 'No, es zona NO inundable por la altura, pendiente y tipo de suelo.',
     },
   ];
 
@@ -93,10 +120,6 @@ export class AppComponent implements OnInit {
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
       `https://www.youtube.com/embed/${youtubeId}`
     );
-
-    // Reemplaza esta URL con la que obtuviste de Google Photos
-    const googlePhotoUrl = 'https://lh3.googleusercontent.com/...';
-    this.photoUrl = this.sanitizer.bypassSecurityTrustUrl(googlePhotoUrl);
 
   }
 
