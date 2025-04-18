@@ -328,3 +328,30 @@ $transition-duration: 0.3s;
 iframe {
   width: -webkit-fill-available;
 }
+
+.lotes-section {
+  mat-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    mat-card-header {
+      margin-bottom: 2rem;
+      text-align: center;
+
+      mat-card-title {
+        font-size: 2rem;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+      }
+
+      mat-card-subtitle {
+        font-size: 1.1rem;
+        color: #666;
+      }
+    }
+
+    mat-card-content {
+      padding: 0;
+    }
+  }
+}

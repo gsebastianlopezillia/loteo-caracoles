@@ -1,0 +1,65 @@
+<div class="lote-carousel-container">
+  <div class="ordenar-container">
+    <select (change)="ordenarLotes($event)">
+      <option value="precio">Ordenar</option>
+      <option value="superficie">Superficie</option>
+      <option value="precio">Precio</option>
+    </select>
+  </div>
+
+  <div class="carousel-wrapper">
+    <button class="nav-button prev" (click)="scrollLeft()" *ngIf="showLeftArrow">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    
+    <div class="lotes-carousel" #carouselContainer (scroll)="onScroll()">
+      <div class="lote-card" *ngFor="let lote of lotes; let i = index">
+        <div class="lote-image" *ngIf="lote.fotos && lote.fotos.length > 0">
+          <img [src]="getSafePhotoUrl(lote.fotos[0])" [alt]="'Lote ' + lote.id">
+        </div>
+        <div class="lote-info">
+          <div class="lote-dimensions">
+            <div class="dimension">
+              <span class="value">{{lote.superficie}}</span>
+              <span class="label">mts</span>
+            </div>
+            <div class="price">
+              <span>USD {{lote.precio | number}}</span>
+            </div>
+            <div class="details">
+              <div class="detail-row">
+                <span>→ {{lote.frente}} mts</span>
+                <span class="detail-label">Frente</span>
+              </div>
+              <div class="detail-row">
+                <span>↓ {{lote.fondo}} mts</span>
+                <span class="detail-label">Fondo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="nav-button next" (click)="scrollRight()" *ngIf="showRightArrow">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+
+  <!-- Paginador con bullets -->
+  <div class="carousel-bullets">
+    <button 
+      *ngFor="let lote of lotes; let i = index" 
+      class="bullet" 
+      [class.active]="currentIndex === i"
+      (click)="scrollToIndex(i)">
+    </button>
+  </div>
+
+  <!-- Botón de contacto global -->
+  <div class="contact-container">
+    <button class="contactar-btn" (click)="contactar()">
+      <i class="whatsapp-icon"></i> Contactar
+    </button>
+  </div>
+</div> 

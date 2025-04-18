@@ -13,9 +13,9 @@ import { DetailModalComponent } from './detail-modal/detail-modal.component';
 import { Lote } from './lote.model';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-
+import { LoteGridComponent } from './components/lote-grid/lote-grid.component';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +30,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatDialogModule,
     CommonModule,
     MatIconModule, 
-    MatButtonModule
+    MatButtonModule,
+    LoteGridComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
