@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/loteo-caracoles',
+  basePath: '/',
   supportedLocales: {
   "en-US": ""
 },

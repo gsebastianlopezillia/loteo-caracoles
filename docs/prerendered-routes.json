@@ -1,6 +1,6 @@
 {
   "routes": {
-    "/loteo-caracoles": {},
-    "/loteo-caracoles/lotes": {}
+    "/": {},
+    "/lotes": {}
   }
 }
