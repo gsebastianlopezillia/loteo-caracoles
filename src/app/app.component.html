@@ -8,7 +8,7 @@
     <mat-card class="hero-card">
       <div class="hero-background">
         <img
-          src="assets\images\loteo-paneo.gif"
+          src="assets\images\img-bg-1.jpg"
           alt="Paneo del loteo en Almafuerte"
           class="hero-gif"
         />
@@ -77,7 +77,7 @@
     <mat-card class="hero-card">
       <div class="hero-background">
         <img
-          src="assets\images\loteo-paneo.gif"
+          src="assets\images\img-bg-2.png"
           alt="Plano loteo"
           class="hero-gif"
         />
@@ -101,14 +101,11 @@
               <div class="ghost-card">✅ Impuestos pagos.</div>
             </mat-grid-tile>
             <mat-grid-tile colspan="3">
-              <button mat-fab extended (click)="abrirWhatsApp()">
-                <img
-                  src="assets/images/whatsapp-icon.png"
-                  alt="WhatsApp"
-                  class="whatsapp-icon"
-                />
-                Pedir información
-              </button>
+              <div class="contact-container">
+                <button class="contactar-btn" (click)="abrirWhatsApp()">
+                  <i class="whatsapp-icon"></i> Pedir información
+                </button>
+              </div>
             </mat-grid-tile>
           </mat-grid-list>
         </div>
@@ -173,15 +170,15 @@
                 <mat-card-content>Inversión proyectada</mat-card-content>
               </mat-card>
             </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+              <div class="contact-container">
+                <button class="contactar-btn" (click)="abrirWhatsApp()">
+                  <i class="whatsapp-icon"></i> Coordinar Visita
+                </button>
+              </div>
+            </mat-grid-tile>
           </mat-grid-list>
         </mat-card-content>
-
-        <!-- Botón de WhatsApp -->
-        <mat-card-actions>
-          <button mat-raised-button color="primary" class="whatsapp-button">
-            <mat-icon>chat</mat-icon> Coordinar Visita
-          </button>
-        </mat-card-actions>
       </mat-card>
     </div>
   </section>
@@ -209,16 +206,6 @@
       <img mat-card-image [src]="imageCard.url" [alt]="imageCard.title">
     </mat-card>
   </section>
-  <section id="faq" class="block faq">
-    <div class="faq-title"><h1>Preguntas frecuentes</h1></div> 
-    <mat-card class="faq-card" *ngFor="let faq of faqs">
-      <mat-card-header>
-        <mat-card-title>{{ faq.pregunta }}</mat-card-title>
-        <mat-card-subtitle>{{ faq.respuesta }}</mat-card-subtitle>
-      </mat-card-header>
-    </mat-card>
-
-  </section>
   <section id="video" class="block video">
     <mat-card>
       <mat-card-content>
@@ -232,15 +219,34 @@
       </mat-card-content>
     </mat-card>
   </section>
+  <section id="faq" class="block faq">
+    <div class="faq-title"><h1>Preguntas frecuentes</h1></div> 
+    <mat-card class="faq-card" *ngFor="let faq of faqs">
+      <mat-card-header>
+        <mat-card-title>{{ faq.pregunta }}</mat-card-title>
+        <mat-card-subtitle>{{ faq.respuesta }}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+  </section>
+  
 </div>
 
 <footer
-  style="text-align: center; padding: 1rem; font-size: 0.875rem; color: #666"
+  style="text-align: center; color: #ffffff; background-color: #000;;"
 >
-  © 2025 | Desarrollado por
-  <a
-    href="mailto:gsebastianlopezillia@gmail.com"
-    style="color: #007bff; text-decoration: none"
-    >gsebastianlopezillia&#64;gmail.com</a
-  >
+  <mat-grid-list cols="3" rowHeight="100px">
+    <mat-grid-tile>
+        <a href="https://maps.app.goo.gl/THoaKVBCUh5LvNv36">Ubicación</a>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <a href="https://terreno.mercadolibre.com.ar/MLA-1490340273-lotes-terrenos-de-1000mts-en-venta-sobre-ruta-4-con-titulo-_JM">Publicacion ML</a>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <a (click)="abrirWhatsApp()">Contacto</a>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+        HECHO CON ❤️ POR SUS PROPIOS DUEÑOS
+    </mat-grid-tile>
+  </mat-grid-list>
 </footer>

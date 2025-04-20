@@ -122,7 +122,7 @@ export class LoteGridComponent implements OnInit, AfterViewInit {
         isScrolling = setTimeout(() => {
           this.updateCurrentIndex();
         }, 66);
-      });
+      }, { passive: true });
     }
   }
 

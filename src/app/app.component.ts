@@ -63,27 +63,27 @@ export class AppComponent implements OnInit {
   public imageCards = [
     {
       title: "Conecta con la naturaleza",
-      url: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Sfd2NqT0EBVj0uQVUwSDnw.jpeg"
+      url: "assets/images/img-card-1.png"
     },
     {
       title: "Caminos mantenidos",
-      url: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Sfd2NqT0EBVj0uQVUwSDnw.jpeg"
+      url: "assets/images/img-card-2.png"
     },
     {
       title: "Límites claros",
-      url: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Sfd2NqT0EBVj0uQVUwSDnw.jpeg"
+      url: "assets/images/img-card-3.png"
     },
     {
       title: "Flora autóctona",
-      url: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Sfd2NqT0EBVj0uQVUwSDnw.jpeg"
+      url: "assets/images/img-card-4.png"
     },
     {
       title: "Fauna silvestre",
-      url: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Sfd2NqT0EBVj0uQVUwSDnw.jpeg"
+      url: "assets/images/img-card-5.png"
     },
     {
       title: "Noches soñadas",
-      url: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Sfd2NqT0EBVj0uQVUwSDnw.jpeg"
+      url: "assets/images/img-card-6.png"
     }
   ]
 
